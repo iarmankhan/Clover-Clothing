@@ -13,29 +13,34 @@ class Directory extends Component {
                 {
                     title: 'Hats',
                     imageUrl: 'https://images.pexels.com/photos/823723/pexels-photo-823723.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-                    id: 1
+                    id: 1,
+                    linkUrl: 'hats'
                 },
                 {
                     title: 'Jackets',
                     imageUrl: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    id: 2
+                    id: 2,
+                    linkUrl: 'jackets'
                 },
                 {
                     title: 'Sneakers',
                     imageUrl: 'https://images.pexels.com/photos/1661470/pexels-photo-1661470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    id: 3
+                    id: 3,
+                    linkUrl: 'sneakers'
                 },
                 {
                     title: 'Shirts',
                     imageUrl: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                     size: 'large',
-                    id: 4
+                    id: 4,
+                    linkUrl: 'shirts'
                 },
                 {
                     title: 'Jeans',
                     imageUrl: 'https://images.pexels.com/photos/1346187/pexels-photo-1346187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                     size: 'large',
-                    id: 5
+                    id: 5,
+                    linkUrl: 'jeans'
                 },
             ]
         }
@@ -45,7 +50,9 @@ class Directory extends Component {
         return (
             <div className="directory-menu">
                 {
-                    this.state.section.map(({id, title, imageUrl, size}) => <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />)
+                    this.state.section.map(({id, ...otherSectionProps}) => (
+                        <MenuItem key={id} {...otherSectionProps} />
+                    ))
                 }
             </div>
         );
