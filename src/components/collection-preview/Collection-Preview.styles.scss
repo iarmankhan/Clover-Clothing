@@ -1,0 +1,38 @@
+.collection-preview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .preview{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .show-more {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        button {
+            background-color: #0F1928;
+            color: #FDFDFC;
+            padding: 8px 12px;
+            border: 2px solid #F8B500;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: 0.4s ease;
+        }
+
+        button:hover {
+            background-color: #f8b500;
+            border: 2px solid #0F1928;
+            color: #0F1928;
+        }
+    }
+}
