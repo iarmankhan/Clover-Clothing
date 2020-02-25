@@ -31,14 +31,12 @@ class Directory extends Component {
                 {
                     title: 'Shirts',
                     imageUrl: 'https://images.pexels.com/photos/69212/pexels-photo-69212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    size: 'large',
                     id: 4,
                     linkUrl: 'shirts'
                 },
                 {
                     title: 'Jeans',
                     imageUrl: 'https://images.pexels.com/photos/1346187/pexels-photo-1346187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    size: 'large',
                     id: 5,
                     linkUrl: 'jeans'
                 },

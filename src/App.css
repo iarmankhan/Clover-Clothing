@@ -3,3 +3,9 @@ body {
     font-family: 'Poppins';
     padding: 20px 60px;
 }   
+
+@media screen and (max-width: 762px){
+    body{
+        padding: 20px 30px;
+    }
+}
