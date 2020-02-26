@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Clover Clothing
+
+An E-commerce app in react!
+
+To set-up firebase, rename `firebase.utils.demo.js` to `firebase.utils.js` and replace config object with your own configuration data.
+
+Happy Coding 😄
 
 ## Available Scripts
 
