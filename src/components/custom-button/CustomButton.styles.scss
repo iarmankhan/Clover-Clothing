@@ -12,5 +12,15 @@
         border: 2px solid #0F1928;
         color: #0F1928;
     }
+
+    &.google-sign-in {
+        background-color: #00ADB5;
+        color: #0F1928;
+        border: 2px solid #FDFDFC;
+
+        &:hover {
+            background-color: #f8b500;
+        }
+    }
 }
 
