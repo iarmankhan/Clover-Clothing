@@ -40,6 +40,12 @@ class Directory extends Component {
                     id: 5,
                     linkUrl: 'jeans'
                 },
+                {
+                    title: 'T-Shirts',
+                    imageUrl: 'https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                    id: 6,
+                    linkUrl: 't-shirts'
+                },
             ]
         }
     }

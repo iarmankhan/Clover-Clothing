@@ -18,6 +18,7 @@ const Header = ({ currentUser, hidden }) => {
                 <h3>Clover Clothing</h3>
             </Link>
             <div className="options">
+                <Link className='option' to='/'>Home</Link>
                 <Link className='option' to='/shop'>Shop</Link>
                 <Link className='option' to='/contact'>Contact</Link>
                 <Link className='option' to='/about'>About</Link>
