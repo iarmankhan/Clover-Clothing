@@ -1,4 +1,4 @@
-import { TOGGLE_CART_DROPDOWN, ADD_ITEM } from "./cart.actions";
+import { TOGGLE_CART_DROPDOWN, ADD_ITEM, CLEAR_ITEM_FROM_CART } from "./cart.actions";
 
 import {addItemToCart} from './cart.utils'
 
@@ -18,6 +18,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartItems: addItemToCart(state.cartItems, action.payload)
+            }
+        case CLEAR_ITEM_FROM_CART:
+            return {
+                ...state,
+                cartItems: state.cartItems.filter(cartItem => cartItem.id !== action.payload.id)
             }
         default:
             return state;
