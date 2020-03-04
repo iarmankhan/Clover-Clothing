@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    section: [
+    sections: [
         {
             title: 'Hats',
             imageUrl: 'https://images.pexels.com/photos/823723/pexels-photo-823723.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',

@@ -2,9 +2,14 @@
     width: 22%;
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 400px;
     align-items: center;
     position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
 
     @media screen and (max-width: 768px) {
         width: 48%;
@@ -12,6 +17,11 @@
 
     @media screen and (max-width: 576px) {
         width: 100%;
+    }
+
+    &:hover{
+        transform: scale(1.03);
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.20);
     }
 
     .image {
@@ -25,38 +35,26 @@
 
     .collection-footer {
         width: 100%;
-        height: 5%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 18px;
+        margin: 0 10px 10px;
 
         .name {
-            width: 90%;
-            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
         }
 
         .price {
-            width: 10%;
+            color: #666666;
         }
     }
 
     .custom-button {
-        width: 80%;
-        opacity: 0;
-        position: absolute;
-        top: 230px;
+        width: 60%;
         transition: 0.2s linear;
-        visibility: hidden;
-        cursor: pointer;
-    }
-
-    &:hover {
-        .image {
-            opacity: 0.6;
-        }
-        .custom-button{
-            visibility: visible;
-            opacity: 1;
-        }
+        margin: 5px 5px 20px;
     }
 }

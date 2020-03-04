@@ -2,11 +2,11 @@
     cursor: pointer;
     background-color: #0F1928;
     color: #FDFDFC;
-    padding: 8px 12px;
-    border: 2px solid #F8B500;
+    padding: 8px 15px;
+    border: 1px solid transparent;
     border-radius: 8px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     transition: 0.4s ease;
     display: flex;
     justify-content: center;
@@ -15,20 +15,23 @@
 
     &:hover {
         background-color: #f8b500;
-        border: 2px solid #0F1928;
+        border: 1px solid transparent;
         color: #0F1928;
     }
 
+    &:focus{
+        outline: none;
+    }
+
     &.secondary {
-        background-color: #F8B500;
+        background-color: transparent;
         color: #0F1928;
-        font-weight: 600;
-        border: 2px solid transparent;
+        font-weight: lighter;
+        border: 2px solid #F8B500;
 
         &:hover {
-            background-color: #00ADB5;
-            color: #FDFDFC;
-            border: 2px solid transparent;
+            color: #F8B500;
+            border: 2px solid #F8B500;
         }
     }
 }

@@ -22,5 +22,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
+        button {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
     }
 }
