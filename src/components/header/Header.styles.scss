@@ -1,78 +1,264 @@
-.header {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+input,
+textarea,
+button,
+select,
+li,
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-    .logo-container {
+div.header {
+    background: #FDFDFC;
+
+    ul.menu {
+        padding-left: 0;
+        margin-top: 0;
+        list-style-type: none;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
-        height: 100%;
-        padding: 25px;
-        text-decoration: none;
 
-        @media screen and (max-width: 768px) {
-            padding-left: 0;
-        }
+        li {
+            font-size: 16px;
+            padding: 15px 10px;
+            position: relative;
 
-        .logo {
-            fill: #0F1928;  
-            transition: 250ms;
-        }
+            &.item {
+                display: none;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 8px;
+                transition: all .2s ease;
+                order: 4;
 
-        h3{
-            color: #0F1928;
-            margin-left: 10px;
-            font-weight: bolder;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 250ms;
+                &.active {
+                    display: block;
+                }
 
-            @media screen and (max-width: 768px) {
-                font-size: 16px;
+                &:hover {
+                    background: #00ADB5;
+                    border-radius: 8px;
+                }
+
+                a {
+                    color: #0F1928;
+                    display: block;
+                    text-decoration: none;
+                }
+
+                &.button {
+                    order: 3;
+                }
+
+                &.secondary {
+                    border-bottom: 1px #ccc solid;
+                }
             }
-        }
 
-        &:hover{
+            &.logo {
+                position: relative;
+                a {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-size: 20px;
+                    color: #0F1928;
+                    text-decoration: none;
 
-            & .logo{
-                fill: #f8b500 
+                    svg{
+                        margin-right: 10px;
+                        width: 32px
+                    }
+                }
             }
 
-            & h3{
-                color: #f8b500;
+            &.cart-button {
+                order: 1;
+            }
+
+            &.toggle {
+                order: 2;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .bars {
+                    background: #00ADB5;
+                    display: inline-block;
+                    height: 3px;
+                    position: relative;
+                    width: 28px;
+
+                    &::before,
+                    &::after {
+                        background: #00ADB5;
+                        display: inline-block;
+                        content: '';
+                        height: 3px;
+                        position: absolute;
+                        width: 28px;
+                        transition: all 300ms ease-in-out;
+                    }
+
+                    &::before {
+                        top: 8px;
+                    }
+
+                    &::after {
+                        top: -8px;
+                    }
+                }
+
+                &.active .bars {
+                    background-color: transparent;
+
+                    &:before,
+                    &:after {
+                        top: 0;
+                    }
+
+                    &:before {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:after {
+                        transform: rotate(45deg);
+                    }
+                }
             }
         }
     }
+}
 
-    .options {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
 
-        .option {
-            padding: 10px 15px;
-            text-decoration: none;
-            position: relative;
-            color: #0F1928;
-            cursor: pointer;
+@media all and (min-width: 468px) {
+    div.header {
+        ul.menu {
+            justify-content: center;
 
-            &::before {
-                transition: 300ms;
-                height: 5px;
-                content: "";
-                position: absolute;
-                background-color: #f8b500;
-                width: 0%;
-                bottom: 0px;
+            li {
+                &.logo {
+                    flex: 1
+                }
+
+                &.item {
+                    margin-bottom: 0;
+                    &:hover {
+                        background: none;
+                    }
+
+                    &:not(.button) {
+                        &:hover {
+                            background: #00ADB5;
+                        }
+                    }
+
+                    &.button {
+                        width: auto;
+                        order: 1;
+                        display: block;
+
+                        a {
+                            text-decoration: none;
+                            padding: 7px 15px;
+                            background: #0F1928;
+                            border: 1px solid #FDFDFC;
+                            border-radius: 50em;
+                            color: #FDFDFC;
+
+                            &:hover {
+                                transition: all .25s;
+                            }
+                        }
+
+                        &:not(.secondary) {
+                            a:hover {
+                                background: #00ADB5;
+                                border-color: #00ADB5;
+                            }
+                        }
+
+                        &.secondary {
+                            border: 0;
+
+                            a {
+                                background: transparent;
+
+                                &:hover {
+                                    color: #ddd;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.toggle {
+                    order: 2
+                }
             }
+        }
+    }
+}
 
-            &:hover::before{
-                width: 70%;
+@media all and (min-width: 768px) {
+    div.header {
+        ul.menu {
+            li {
+                padding: 15px 10px;
+
+                &.logo {
+                    order: 0;
+                }
+
+                &.item {
+                    margin-bottom: 0;
+                    display: block;
+                    width: auto;
+                    order: 1;
+
+                    &:not(.button) {
+                        &:hover {
+                            background: none;
+                        }
+                    }
+
+                    &.button {
+                        order: 2;
+                        padding-right: 0;
+
+                        a {
+                            &::after{
+                                content: none;
+                            }
+                        }
+                    }
+
+                    a {
+                        &:after {
+                            background: none repeat scroll 0 0 transparent;
+                            bottom: 0;
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            left: 50%;
+                            position: absolute;
+                            background: #f8b500;
+                            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                            width: 0;
+                        }
+
+                        &:hover:after {
+                            width: 100%;
+                            left: 0
+                        }
+                    }
+                }
+
+                &.toggle {
+                    display: none;
+                }
             }
         }
     }

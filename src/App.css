@@ -6,7 +6,8 @@ body {
 
 @media screen and (max-width: 762px){
     body{
-        padding: 20px 30px;
+        padding: 10px 20px;
+        padding-top: 0;
     }
 }
 

@@ -1,5 +1,6 @@
 .collection-item {
-    width: 22%;
+    width: 20vw;
+    // min-width: 200px;
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -9,14 +10,15 @@
     border-radius: 8px;
     overflow: hidden;
     margin: 10px;
+    flex-direction: wrap;
     transition: all 0.3s ease-in-out;
 
     @media screen and (max-width: 768px) {
-        width: 48%;
+        width: 42vw;
     }
 
     @media screen and (max-width: 576px) {
-        width: 100%;
+        width: 100vw;
     }
 
     &:hover{

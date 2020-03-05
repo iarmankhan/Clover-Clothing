@@ -15,29 +15,51 @@ import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 
 const Header = ({ currentUser, hidden }) => {
+
+    const toggleMobileMenu = e => {
+        Array.from(document.querySelectorAll('li.item')).forEach(function(e) {
+            if(e.classList.contains('active')){
+                e.classList.remove('active')
+                document.querySelector('li.toggle').classList.remove('active')
+            }else{
+                e.classList.add('active')
+                document.querySelector('li.toggle').classList.add('active')
+            }
+        });
+    };
+
     return (
         <div className='header'>
-            <Link className='logo-container' to="/">
-                <Logo className='logo' />
-                <h3>Clover Clothing</h3>
-            </Link>
-            <div className="options">
-                <Link className='option' to='/'>Home</Link>
-                <Link className='option' to='/shop'>Shop</Link>
-                <Link className='option' to='/contact'>Contact</Link>
-                <Link className='option' to='/about'>About</Link>
-                {
-                    currentUser 
-                    ? <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
-                    : <Link className='option' to='/signin'>Sign In</Link>
-                }
-                <CartIcon />
-                {
-                    hidden
-                    ? null
-                    : <CartDropdown />
-                }
-            </div>
+            <ul className="menu">
+                <li className="logo">
+                    <Link className='logo-container' to="/">
+                        <Logo className='logo' />
+                        <h3>Clover Clothing</h3>
+                    </Link>
+                </li>
+                <li className="item"><Link className='option' to='/'>Home</Link></li>
+                <li className="item"><Link className='option' to='/shop'>Shop</Link></li>
+                <li className="item"><Link className='option' to='/contact'>Contact</Link></li>
+                <li className="item"><Link className='option' to='/about'>About</Link></li>
+                <li className="item button">
+                    {
+                        currentUser 
+                        ? <div className='option' onClick={() => auth.signOut()}>Sign Out</div>
+                        : <Link className='option' to='/signin'>Sign In</Link>
+                    }
+                </li>
+                <li className='cart-button'>
+                <CartIcon />    
+                    {
+                        hidden
+                        ? null
+                        : <CartDropdown />
+                    }
+                </li>
+                <li className='toggle' onClick={toggleMobileMenu}><span className='bars'></span></li>
+            </ul>
+
+            
         </div>
     );
 }
