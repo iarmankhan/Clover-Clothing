@@ -8,12 +8,12 @@ import CollectionPreview from '../../components/collection-preview/Collection-Pr
 
 import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
-const CollectionsOverview = ({ collections }) => {
+const CollectionsOverview = ({ collections, history, match }) => {
     return (
         <div className="collections-overview">
             {
                 collections.map(({ id, ...otherCollectionProps }) => (
-                    <CollectionPreview key={id} {...otherCollectionProps} />
+                    <CollectionPreview key={id} match={match} history={history} {...otherCollectionProps} />
                 ))
             }
         </div>

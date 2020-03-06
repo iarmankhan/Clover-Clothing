@@ -4,7 +4,7 @@ import './Collection-Preview.styles.scss'
 import CollectionItem from '../collection-item/Collection-Item.component';
 import CustomButton from '../custom-button/CustomButton.component';
 
-const CollectionPreview = ({title, items}) => {
+const CollectionPreview = ({title, routeName, items, history, match}) => {
     return (
         <div className="collection-preview">
             <h1 className="title">{title.toUpperCase()}</h1>
@@ -16,7 +16,7 @@ const CollectionPreview = ({title, items}) => {
                 }
             </div>
             <div className="show-more">
-                <CustomButton>Show More</CustomButton>
+                <CustomButton onClick={() => {history.push(`${routeName}`)}}>Show More</CustomButton>
             </div>
         </div>
     );
