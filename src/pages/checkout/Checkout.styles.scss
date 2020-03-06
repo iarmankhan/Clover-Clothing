@@ -1,42 +1,53 @@
 .checkout-page {
-    width: 55%;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto 0;
+  width: 70%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto 0;
 
-    .checkout-header {
+    @media all and (max-width: 468px){
         width: 100%;
-        display: flex;
-        height: 40px;
-        justify-content: space-between;
-        border-bottom: 1px solid darkgray;
-
-        .header-block {
-            text-transform: uppercase;
-            width: 23%;
-
-            &:last-child{
-                width: 8%;
-            }
-        }
     }
 
-    .total {
-        margin-top: 30px;
-        margin-left: auto;
-        font-size: 36px;
+    @media all and (max-width: 768px){
+        width: 90%;
     }
 
-    button{
-        margin-left: auto;
-        margin-top: 40px;
+  .checkout-items {
+    width: 100%;
+
+    thead {
+      th {
+        width: 20%;
+          @media all and (max-width: 468px){
+              font-size: 14px;
+          }
+      }
     }
 
-    .test-warning {
-        text-align: center;
-        margin-top: 40px;
-        color: red;
+    tbody:before {
+      content: "@";
+      display: block;
+      line-height: 20px;
+      text-indent: -99999px;
     }
+  }
+
+  .total {
+    margin-top: 30px;
+    margin-left: auto;
+    font-size: 36px;
+  }
+
+  button {
+    margin-left: auto;
+    margin-top: 40px;
+  }
+
+  .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    color: red;
+  }
 }
