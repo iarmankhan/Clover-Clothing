@@ -38,10 +38,10 @@ export const ItemContainer = styled.li`
     order: 4;
 
     ${
-        ({active}) => active
+    ({active}) => active
         ? `display: block;`
         : ''
-    }
+}
 
     &:hover {
         background: #00ADB5;
@@ -138,14 +138,13 @@ export const ItemContainer = styled.li`
 
         a {
             &:after {
-                background: none repeat scroll 0 0 transparent;
                 bottom: 0;
                 content: "";
                 display: block;
                 height: 2px;
                 left: 50%;
                 position: absolute;
-                background: #f8b500;
+                background: #f8b500 none repeat scroll 0 0;
                 transition: width 0.3s ease 0s, left 0.3s ease 0s;
                 width: 0;
             }
@@ -242,7 +241,8 @@ export const ToggleContainer = styled.li`
                 }
             }`
             : ''
-    }
+    };
+    
     @media all and (min-width: 468px) {
         order: 2;
     }

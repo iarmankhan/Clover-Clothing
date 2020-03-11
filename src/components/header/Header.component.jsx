@@ -7,7 +7,6 @@ import {auth} from '../../firebase/firebase.utils'
 
 import { ReactComponent as Logo } from '../../assets/images/four-leaf-clover.svg'
 
-// import './Header.styles.scss'
 import CartIcon from '../cart-icon/Cart-Icon.component';
 import CartDropdown from '../cart-dropdown/Cart-Dropdown.component';
 

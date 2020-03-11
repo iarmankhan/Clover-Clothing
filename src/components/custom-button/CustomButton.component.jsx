@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './CustomButton.styles.scss'
+import {CustomButtonContainer} from "./CustomButton.styles";
 
 const CustomButton = ({ children, isSecondary, ...otherProps }) => {
     return (
-        <button className={`${isSecondary ? 'secondary' : ''} custom-button`} {...otherProps}>
+        <CustomButtonContainer isSecondary={isSecondary} {...otherProps}>
             {children}
-        </button>
+        </CustomButtonContainer>
     );
-}
+};
  
 export default CustomButton;
