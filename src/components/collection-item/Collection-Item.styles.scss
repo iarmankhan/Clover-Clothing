@@ -1,6 +1,5 @@
 .collection-item {
     width: 20vw;
-    // min-width: 200px;
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -10,8 +9,8 @@
     border-radius: 8px;
     overflow: hidden;
     margin: 10px;
-    flex-direction: wrap;
     transition: all 0.3s ease-in-out;
+    padding-bottom: 30px;
 
     @media screen and (max-width: 768px) {
         width: 42vw;
