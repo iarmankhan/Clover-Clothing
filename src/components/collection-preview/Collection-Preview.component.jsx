@@ -16,10 +16,10 @@ const CollectionPreview = ({title, routeName, items, history, match}) => {
                 }
             </div>
             <div className="show-more">
-                <CustomButton onClick={() => {history.push(`${routeName}`)}}>Show More</CustomButton>
+                <CustomButton onClick={() => {history.push(`${match.path}/${routeName}`)}}>Show More</CustomButton>
             </div>
         </div>
     );
-}
- 
+};
+
 export default CollectionPreview;
