@@ -18,14 +18,14 @@ const CartIcon = ({toggleCartDropdown, itemsCount}) => {
             <span className='item-count'>{itemsCount}</span>
         </div>
     );
-}
- 
+};
+
 const mapDispatchToProps = dispatch => ({
     toggleCartDropdown: () => dispatch(toggleCartDropdown())
-})
+});
 
 const mapStateToProps = createStructuredSelector({
     itemsCount: selectCartItemsCount
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

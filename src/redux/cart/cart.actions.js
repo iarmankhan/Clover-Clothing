@@ -1,7 +1,7 @@
-export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN'
-export const ADD_ITEM = 'ADD_ITEM'
-export const REMOVE_ITEM = 'REMOVE_ITEM'
-export const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART'
+export const TOGGLE_CART_DROPDOWN = 'TOGGLE_CART_DROPDOWN';
+export const ADD_ITEM = 'ADD_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 
 export const toggleCartDropdown = () => {
     return {
@@ -14,18 +14,18 @@ export const addItem = item => {
         type: ADD_ITEM,
         payload: item
     }
-}
+};
 
 export const removeItem = item => {
     return {
         type: REMOVE_ITEM,
         payload: item
     }
-}
+};
 
 export const clearItemFromCart = item => {
     return {
         type: CLEAR_ITEM_FROM_CART,
         payload: item
     }
-}
+};

@@ -20,12 +20,12 @@ class SignUp extends Component {
     }
 
     handleSubmit = async event => {
-        event.preventDefault()
+        event.preventDefault();
 
         const { displayName, email, password, confirmPassword } = this.state;
 
         if (password !== confirmPassword) {
-            alert("Passwords don't match")
+            alert("Passwords don't match");
             return
         }
 
@@ -36,15 +36,15 @@ class SignUp extends Component {
         } catch (error) {
             console.error(error)
         }
-    }
+    };
 
     handleChange = event => {
-        const { value, name } = event.target
+        const { value, name } = event.target;
 
         this.setState({
             [name]: value
         })
-    }
+    };
 
     render() {
         const { displayName, email, password, confirmPassword } = this.state;

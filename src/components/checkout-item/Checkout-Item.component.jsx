@@ -6,7 +6,8 @@ import {clearItemFromCart, addItem, removeItem} from '../../redux/cart/cart.acti
 import './Checkout-Item.styles.scss'
 
 const CheckoutItem = ({cartItem, clearItem, addItem, removeItem}) => {
-    const {imageUrl, name, quantity, price} = cartItem
+    const {imageUrl, name, quantity, price} = cartItem;
+
     return (
         <tr className='item'>
             <td className='image-container'>
@@ -30,7 +31,7 @@ const CheckoutItem = ({cartItem, clearItem, addItem, removeItem}) => {
             </td>
         </tr>
     );
-}
+};
 
 const mapDispatchToProps = dispatch => ({
     clearItem: item => dispatch(clearItemFromCart(item)),

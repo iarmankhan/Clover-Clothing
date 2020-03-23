@@ -18,10 +18,10 @@ const CollectionsOverview = ({ collections, history, match }) => {
             }
         </div>
     );
-}
- 
+};
+
 const mapStateToProps = createStructuredSelector({
     collections: selectCollectionsForPreview
-})
+});
 
 export default connect(mapStateToProps)(CollectionsOverview);

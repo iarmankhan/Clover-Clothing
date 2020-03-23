@@ -36,11 +36,11 @@ const Checkout = ({cartItems, total}) => {
             <StripeCheckoutButton price={total} />
         </div>
     );
-}
+};
 
 const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems,
-    total: selectCartTotal   
-})
- 
+    total: selectCartTotal
+});
+
 export default connect(mapStateToProps)(Checkout);
