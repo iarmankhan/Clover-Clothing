@@ -1,8 +1,35 @@
-export const UPDATE_COLLECTIONS = 'UPDATE_COLLECTIONS';
+import ShopActionTypes from "./shop.types";
+import {convertCollectionSnapshotToMap, firestore} from "../../firebase/firebase.utils";
 
-export const updateCollections = (collectionsMap) => {
+export const fetchCollectionsStart = () => {
     return {
-        type: UPDATE_COLLECTIONS,
+        type: ShopActionTypes.FETCH_COLLECTIONS_START,
+    }
+};
+
+export const fetchCollectionsSuccess = collectionsMap => {
+    return {
+        type: ShopActionTypes.FETCH_COLLECTIONS_SUCCESS,
         payload: collectionsMap
     }
+};
+
+export const fetchCollectionsFailure = errorMessage => {
+    return {
+        type: ShopActionTypes.FETCH_COLLECTIONS_FAILURE,
+        payload: errorMessage
+    }
+}
+
+export const fetchCollectionsStartAsync = () => {
+  return dispatch => {
+      const collectionRef = firestore.collection('collections');
+
+      dispatch(fetchCollectionsStart());
+
+      collectionRef.get().then(snapshot => {
+          const collectionsMap = convertCollectionSnapshotToMap(snapshot);
+          dispatch(fetchCollectionsSuccess(collectionsMap));
+      }).catch(error => dispatch(fetchCollectionsFailure(error.message)))
+  }
 };
