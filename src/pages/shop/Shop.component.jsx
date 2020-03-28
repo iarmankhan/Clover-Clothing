@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {createStructuredSelector} from 'reselect';
 
 import {fetchCollectionsStartAsync} from "../../redux/shop/shop.actions";
 
-import CollectionsOverview from '../../components/collections-overview/Collections-Overview.component';
-import Collection from '../collection/Collection.component';
-import withSpinner from "../../components/with-spinner/With-Spinner.component";
-import {selectIsCollectionFetching, selectIsCollectionsLoaded} from "../../redux/shop/shop.selectors";
-
-const CollectionOverviewWithSpinner = withSpinner(CollectionsOverview);
-const CollectionPageWithSpinner = withSpinner(Collection);
+import CollectionsOverviewContainer from "../../components/collections-overview/Collections-Overview.container";
+import CollectionPageContainer from "../collection/Collection.container";
 
 class Shop extends Component{
     componentDidMount() {
@@ -20,27 +14,23 @@ class Shop extends Component{
     }
 
     render(){
-        const {match, isFetchingCollections, isCollectionsLoaded} = this.props;
+        const {match} = this.props;
         return (
             <div className="shop-page">
                 <Route
                     exact
                     path={`${match.path}`}
-                    render={(props) => <CollectionOverviewWithSpinner isLoading={isFetchingCollections} {...props} /> }
+                    component={CollectionsOverviewContainer}
                 />
                 <Route
                     path={`${match.path}/:collectionId`}
-                    component={(props) => <CollectionPageWithSpinner isLoading={!isCollectionsLoaded} {...props} />}
+                    component={CollectionPageContainer}
                 />
             </div>
         );
     }
 }
 
-const mapStateToProps = createStructuredSelector({
-    isFetchingCollections: selectIsCollectionFetching,
-    isCollectionsLoaded: selectIsCollectionsLoaded
-});
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -48,4 +38,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);
