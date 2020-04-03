@@ -20,8 +20,9 @@ import {
     MenuContainer,
     ToggleContainer
 } from "./Header.styles";
+import {signOutStart} from "../../redux/user/user.actions";
 
-const Header = ({ currentUser, hidden }) => {
+const Header = ({ currentUser, hidden, signOutStart }) => {
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -39,8 +40,8 @@ const Header = ({ currentUser, hidden }) => {
                 <ItemContainer active={isActive}><Link to='/about'>About</Link></ItemContainer>
                 <ItemContainer className='button' active={isActive}>
                     {
-                        currentUser 
-                        ? <div onClick={() => auth.signOut()}>Sign Out</div>
+                        currentUser
+                        ? <div onClick={signOutStart}>Sign Out</div>
                         : <Link to='/signin'>Sign In</Link>
                     }
                 </ItemContainer>
@@ -62,5 +63,9 @@ const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
 });
- 
-export default connect(mapStateToProps)(Header);
+
+const mapDispatchToProps = dispatch => ({
+    signOutStart: () => dispatch(signOutStart())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
