@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 
-import {auth} from '../../firebase/firebase.utils'
-
 import { ReactComponent as Logo } from '../../assets/images/four-leaf-clover.svg'
 
 import CartIcon from '../cart-icon/Cart-Icon.component';
