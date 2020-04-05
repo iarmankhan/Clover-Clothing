@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 
@@ -28,6 +30,7 @@ class App extends Component {
         const {currentUser} = this.props;
         return (
             <div>
+                <ToastContainer />
                 <ScrollToTop />
                 <Header/>
                 <Switch>
