@@ -1,4 +1,6 @@
-.sign-in {
+import styled from 'styled-components'
+
+export const AuthenticationFormContainer = styled.div`
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -26,4 +28,4 @@
         display: flex;
         justify-content: space-between;
     }
-}
+`;

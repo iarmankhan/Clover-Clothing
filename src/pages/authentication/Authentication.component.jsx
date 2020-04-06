@@ -1,23 +1,23 @@
 import React from 'react';
 
-import './Authentication.styles.scss'
-import SignIn from '../../components/sign-in/Sing-In.component';
-import SignUp from '../../components/sign-up/Sign-Up.component';
+import SignIn from '../../components/authentication/sign-in/Sing-In.component';
+import SignUp from '../../components/authentication/sign-up/Sign-Up.component';
 
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import {selectUserErrors} from "../../redux/user/user.selectors";
 import { toast } from 'react-toastify';
+import {AuthenticationContainer} from "./Authentication.styles";
 
 const Authentication = ({error}) => {
     if(error){
         toast.error(error.message);
     }
     return (
-        <div className="authentication">
+        <AuthenticationContainer>
             <SignIn />
             <SignUp />
-        </div>
+        </AuthenticationContainer>
     );
 };
 

@@ -1,5 +1,7 @@
-.item {
-  width: 100%;
+import styled from 'styled-components'
+
+export const CheckoutItemContainer = styled.tr`
+    width: 100%;
 
     td{
         text-align: center;
@@ -10,18 +12,18 @@
         align-items: center;
         justify-content: center;
         font-size: 24px;
-
+    
         .arrow{
             cursor: pointer;
             margin: 10px;
         }
     }
 
-  .image-container {
+    .image-container {
       width: 20%;
-
+    
       img {
           width: 100%;
       }
-  }
-}
+    }
+`;

@@ -1,24 +1,28 @@
 import React from 'react';
 
-import './Collection-Preview.styles.scss'
 import CollectionItem from '../collection-item/Collection-Item.component';
 import CustomButton from '../custom-button/CustomButton.component';
+import {
+    CollectionPreviewContainer,
+    CollectionPreviewList,
+    CollectionPreviewShowMore
+} from "./Collection-Preview.styles";
 
 const CollectionPreview = ({title, routeName, items, history, match}) => {
     return (
-        <div className="collection-preview">
+        <CollectionPreviewContainer>
             <h1 className="title">{title.toUpperCase()}</h1>
-            <div className="preview">
+            <CollectionPreviewList>
                 {
                     items
                         .filter((item, idx) => idx < 4)
                         .map(item => (<CollectionItem key={item.id} item={item} />))
                 }
-            </div>
-            <div className="show-more">
+            </CollectionPreviewList>
+            <CollectionPreviewShowMore>
                 <CustomButton onClick={() => {history.push(`${match.path}/${routeName}`)}}>Show More</CustomButton>
-            </div>
-        </div>
+            </CollectionPreviewShowMore>
+        </CollectionPreviewContainer>
     );
 };
 

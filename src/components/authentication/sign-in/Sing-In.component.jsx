@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import FormInput from '../form-input/FormInput.component';
-import CustomButton from '../custom-button/CustomButton.component';
-import {googleSignInStart, emailSignInStart} from "../../redux/user/user.actions";
+import FormInput from '../../form-input/FormInput.component';
+import CustomButton from '../../custom-button/CustomButton.component';
+import {googleSignInStart, emailSignInStart} from "../../../redux/user/user.actions";
 
-import './Sign-In.styles.scss'
+import {AuthenticationFormContainer} from "../SignInUp.styles";
 
 class SignIn extends Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class SignIn extends Component {
         const {googleSignInStart} = this.props;
         const {email, password} = this.state;
         return (
-            <div className="sign-in">
+            <AuthenticationFormContainer>
                 <h2>I already have an account</h2>
                 <span>Sign In with your email and password</span>
                 <form onSubmit={this.handleSubmit}>
@@ -61,7 +61,7 @@ class SignIn extends Component {
                         <CustomButton type="button" onClick={googleSignInStart} isSecondary>Sign in with Google</CustomButton>
                     </div>
                 </form>
-            </div>
+            </AuthenticationFormContainer>
         );
     }
 }

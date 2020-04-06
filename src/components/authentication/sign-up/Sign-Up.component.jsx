@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
-import FormInput from '../form-input/FormInput.component';
-import CustomButton from '../custom-button/CustomButton.component';
+import FormInput from '../../form-input/FormInput.component';
+import CustomButton from '../../custom-button/CustomButton.component';
 
-    import './Sign-Up.styles.scss'
-import {signUpStart} from "../../redux/user/user.actions";
+import {signUpStart} from "../../../redux/user/user.actions";
+import {AuthenticationFormContainer} from "../SignInUp.styles";
 
 class SignUp extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ class SignUp extends Component {
     render() {
         const { displayName, email, password, confirmPassword } = this.state;
         return (
-            <div className="sign-up">
+            <AuthenticationFormContainer>
                 <h2>I don't have an account</h2>
                 <span>Sign up with your email and password</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
@@ -84,7 +84,7 @@ class SignUp extends Component {
                         <CustomButton type="submit">Sign Up</CustomButton>
                     </div>
                 </form>
-            </div>
+            </AuthenticationFormContainer>
         );
     }
 }
